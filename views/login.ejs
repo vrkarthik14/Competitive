@@ -1,0 +1,85 @@
+<% include partials/header.ejs %>
+        
+<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+				<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-education" aria-hidden="true"></span></a>
+			</div>
+		 <div class="collapse navbar-collapse" id="bs-nav-demo">
+			<!--<ul class="nav navbar-nav">-->
+			<!--	<li><a href="a">About</a></li>-->
+			<!--	<li><a href="a">Contact</a></li>-->
+			<!--</ul>-->
+			<ul class="nav navbar-nav navbar-right">
+			
+			     <li><a href="/register">Sign Up <i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+    				<li><a href="/exams">Home <i class="fa fa-home" aria-hidden="true"></i></a></li>
+    			
+			
+			</ul>
+		</div>
+			</div>
+	</nav>  
+<style type="text/css">
+body{
+                padding-top:300px 200px;
+                background: #070000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #070000, #4C0001, #070000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #070000, #4C0001, #070000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+            }
+            .form-group{
+                text-align:center;
+            }
+            .jumbotron{
+                background:rgba(0,0,0,0.2);
+            }
+            #h1{
+                color:white;
+               text-align: center;
+            }
+             .alert{
+                
+                text-align:center;
+                margin-top:50px;
+            
+            }
+</style>
+<!--<div class="container">-->
+<!--    <div class="alert alert-danger" role="alert" class="head">-->
+<!--     <h4 id="h12"></h4>-->
+<!--</div>-->
+<!--</div>-->
+<div class="container">
+<div style="width: 40%; margin: 200px auto;">
+    <div class="jumbotron">
+
+<h1 id="h1">Login In </h1>
+
+  <form action="/login" method="POST">
+      <div class="form-group">
+    <input type="text" name="username" placeholder="username">
+    </div>
+    <div class="form-group">
+    <input type="password" name="password" placeholder="password">
+      </div>
+    <div class="form-group">
+    <input class="btn btn-success"type="submit" value="Login">
+      </div>
+</form>
+</div>
+</div>
+
+
+
+</div>
+
+        
+<% include partials/footer.ejs %>

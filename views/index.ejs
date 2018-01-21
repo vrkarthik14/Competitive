@@ -1,0 +1,96 @@
+<% include partials/header.ejs %>
+        
+<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+				<a href="/exams" class="navbar-brand"><span class="glyphicon glyphicon-education" aria-hidden="true"></span></a>
+			</div>
+		 <div class="collapse navbar-collapse" id="bs-nav-demo">
+			<!--<ul class="nav navbar-nav">-->
+			<!--	<li><a href="a">About</a></li>-->
+			<!--	<li><a href="a">Contact</a></li>-->
+			<!--</ul>-->
+			<ul class="nav navbar-nav navbar-right">
+			<%	if(!currentUser){ %>
+    				<li><a href="/register">Sing Up <i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+    				<li><a href="/login">Log In <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+    			<%	}else{ %>
+    				<li><a href="/logout">Log Out <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+			  <% } %>
+			</ul>
+		</div>
+			</div>
+	</nav>  
+
+
+
+
+
+
+    
+       
+       <div>
+       	<header class="jumbotron">
+       	 	<h1 class="header"> ENTRY TO COMPETITIVE WORLD </h1>
+       	 	<marquee>
+       	 	<P id="marquee">Live to compete!     You did not wake up to be MEDIOCRE</P>
+       	 	
+       	 	</marquee>
+       	 		<div id="b1" class="container">
+       	 		    <a class="btn btn-success" href="/exams/new">POST A NEW RESOURCE </a>
+       	 		</div>
+        </header> 
+       </div>
+       
+       
+<!--       <div class="container">-->
+<!--           <div class="alert alert-danger" role="alert" class="head">-->
+<!--     <h5 id="h12"></h5>-->
+<!--</div>-->
+<!--          <div class="alert alert-success" role="alert" class="head">-->
+<!--     <h5 id="h12"></h5>-->
+<!--</div>-->
+<!--       </div>-->
+ 
+		
+		<div class="ui main text container">
+    <div class="ui huge header">Various Competitive Exams And Resources</div>
+    <div class="ui top  attached segment">
+        <div class="ui divided items">
+            <% resources.forEach(function(resource){ %>
+                <div class="item">
+                    <div class="image">
+                        <img src="<%= resource.image %>" >
+                    </div>
+                    <div class="content">
+                         <h2 class="header"><%=resource.title.toUpperCase()%></h2>
+                         <div class="description">
+                             <p><%=resource.body.substring(0,300)%>.........</p>
+                         </div>
+                         
+                         
+                        
+                         <div class="extra">
+                             <a class="ui floated basic violet button" href="/exams/<%= resource._id %>">
+                                  More Info
+                                 <i class="right chevron icon"></i>
+                             </a>
+                         </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+	
+			       
+	        
+<% include partials/footer.ejs %>
+        
